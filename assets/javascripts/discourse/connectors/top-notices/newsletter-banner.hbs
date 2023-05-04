@@ -1,0 +1,23 @@
+{{#if this.showBanner}}
+  <aside class="newsletter-subscription-banner">
+    <div class="banner-text">
+      <h2>{{i18n "discourse_newsletter_integration.banner.heading"}}
+        {{emoji "love_letter"}}</h2>
+      <p class="banner-description">
+        {{i18n "discourse_newsletter_integration.banner.description"}}
+      </p>
+    </div>
+    <div class="banner-controls">
+      <DButton @icon="times" @class="close-btn" @action={{action "dismiss"}} />
+      <DButton
+        @class="btn-primary subscribe-btn"
+        @label="discourse_newsletter_integration.banner.subscribe"
+        @action={{action "subscribe"}}
+        @disabled={{this.disableControls}}
+      />
+      <a class="manage-preferences" href={{get-url "/my/preferences/emails"}}>
+        {{i18n "discourse_newsletter_integration.banner.manage_preferences"}}
+      </a>
+    </div>
+  </aside>
+{{/if}}

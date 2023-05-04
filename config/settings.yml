@@ -1,4 +1,15 @@
 plugins:
-  plugin_name_enabled:
-    default: true
+  discourse_newsletter_integration_enabled:
+    default: false
     client: true
+  discourse_newsletter_integration_mailchimp_api_key:
+    default: ""
+    secret: true
+  discourse_newsletter_integration_mailchimp_list_id: ""
+  discourse_newsletter_integration_mailchimp_server_prefix:
+    default: ""
+    regex: "\\A[a-z0-9]*\\Z"
+  discourse_newsletter_integration_mailchimp_webhook_secret:
+    default: ""
+    secret: true
+    hidden: true

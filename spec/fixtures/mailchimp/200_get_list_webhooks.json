@@ -1,0 +1,73 @@
+{
+  "webhooks": [
+    {
+      "id": "cec69f99a2",
+      "url": "https://example.com/newsletter-integration/webhooks/mailchimp/dd16065c2d1b2c1e7a21bd47a4608db0",
+      "events": {
+        "subscribe": true,
+        "unsubscribe": true,
+        "profile": false,
+        "cleaned": false,
+        "upemail": false,
+        "campaign": false
+      },
+      "sources": {
+        "user": true,
+        "admin": true,
+        "api": true
+      },
+      "list_id": "63c1bbed02",
+      "_links": [
+        {
+          "rel": "self",
+          "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks/cec69f99a2",
+          "method": "GET",
+          "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/Response.json"
+        },
+        {
+          "rel": "parent",
+          "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks",
+          "method": "GET",
+          "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/CollectionResponse.json",
+          "schema": "https://us14.api.mailchimp.com/schema/3.0/Paths/Lists/Webhooks/Collection.json"
+        },
+        {
+          "rel": "delete",
+          "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks/cec69f99a2",
+          "method": "DELETE"
+        },
+        {
+          "rel": "update",
+          "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks/cec69f99a2",
+          "method": "PATCH",
+          "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/Response.json",
+          "schema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/PATCH.json"
+        }
+      ]
+    }
+  ],
+  "list_id": "63c1bbed02",
+  "total_items": 1,
+  "_links": [
+    {
+      "rel": "self",
+      "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks",
+      "method": "GET",
+      "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/CollectionResponse.json",
+      "schema": "https://us14.api.mailchimp.com/schema/3.0/Paths/Lists/Webhooks/Collection.json"
+    },
+    {
+      "rel": "parent",
+      "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02",
+      "method": "GET",
+      "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Response.json"
+    },
+    {
+      "rel": "create",
+      "href": "https://us14.api.mailchimp.com/3.0/lists/63c1bbed02/webhooks",
+      "method": "POST",
+      "targetSchema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/Response.json",
+      "schema": "https://us14.api.mailchimp.com/schema/3.0/Definitions/Lists/Webhooks/POST.json"
+    }
+  ]
+}

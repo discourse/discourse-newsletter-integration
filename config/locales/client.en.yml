@@ -1,4 +1,12 @@
 en:
   js:
-    discourse_plugin_name:
-      placeholder: placeholder
+    discourse_newsletter_integration:
+      banner:
+        heading: "Subscribe to our Newsletter!"
+        subscribe: "Subscribe"
+        manage_preferences: "Manage preferences"
+        description: |
+          Stay informed with the latest updates, news, and discussions by subscribing to our community newsletter.
+      preferences:
+        section_head: "Newsletter"
+        checkbox_description: "Subscribe to newsletter"
