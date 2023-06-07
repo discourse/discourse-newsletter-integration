@@ -38,7 +38,7 @@ after_initialize do
     result
   end
 
-  on(:user_updater_commit_updates) do |user, attributes|
+  on(:within_user_updater_transaction) do |user, attributes|
     next if !NewsletterIntegration.plugin_configured?
 
     if attributes.key?(:newsletter_integration_subscribe_global_newsletter)

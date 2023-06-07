@@ -14,10 +14,16 @@ export default {
         "newsletter_integration_subscribe_global_newsletter"
       );
 
-      api.addSaveAttributeToPreferencesController(
-        "emails",
-        "newsletter_integration_subscribe_global_newsletter"
-      );
+      api.modifyClass("controller:preferences/emails", {
+        pluginId: "discourse-newsletter-integration-emails-preference",
+
+        init() {
+          this._super(...arguments);
+          this.saveAttrNames.push(
+            "newsletter_integration_subscribe_global_newsletter"
+          );
+        },
+      });
     });
   },
 };
