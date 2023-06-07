@@ -14,7 +14,7 @@ module NewsletterIntegration
           newsletter_integration_id: GLOBAL_NEWSLETTER_ID,
         )
       subscription.ensure_active!
-      render json: { message: "OK" }, status: 200
+      render json: success_json, status: 200
     end
 
     def unsubscribe
@@ -30,7 +30,7 @@ module NewsletterIntegration
       else
         subscription.ensure_inactive!
       end
-      render json: { message: "OK" }, status: 200
+      render json: success_json, status: 200
     end
 
     private
