@@ -1,1 +1,9 @@
 en:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Enable the newsletter integration plugin."
+    discourse_newsletter_integration_mailchimp_api_key: "API key for your Mailchimp account."
+    discourse_newsletter_integration_mailchimp_list_id: "The ID of your Mailchimp Audience that you want to sync with Discourse."
+    discourse_newsletter_integration_mailchimp_server_prefix: "The subdomain part of the URL that you see when you log into your Mailchimp account, e.g. `us14` and `us19`."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "You've changed your newsletter subscription too many times. Please wait %{time_left} before trying again."
