@@ -7,6 +7,9 @@ en:
         manage_preferences: "Manage preferences"
         description: |
           Stay informed with the latest updates, news, and discussions by subscribing to our community newsletter.
+        thank_you: "Thank you! You've been added to our newsletter!"
+        added_to_newsletter: |
+          If you change your mind, you can always update your subscription in your <a href='%{preferencesUrl}'>preferences</a>.
       preferences:
         section_head: "Newsletter"
         checkbox_description: "Subscribe to newsletter"

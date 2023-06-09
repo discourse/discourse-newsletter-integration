@@ -7,6 +7,7 @@ import {
 import { click, visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import pretender from "discourse/tests/helpers/create-pretender";
+import I18n from "I18n";
 
 acceptance(
   "Discourse Newsletter Integration - Newsletter Banner - Anons",
@@ -60,18 +61,6 @@ acceptance(
       );
     });
 
-    test("manage preferences link", async function (assert) {
-      await visit("/");
-
-      const managePreferencesLink = query(
-        ".newsletter-subscription-banner .manage-preferences"
-      );
-      assert.ok(
-        managePreferencesLink.href.endsWith("/my/preferences/emails"),
-        "manage preferences link has href to `/my/preferences/emails`"
-      );
-    });
-
     test("dismiss button when clicked and the HTTP request succeeds", async function (assert) {
       let deleteRequestSent = false;
 
@@ -121,13 +110,37 @@ acceptance(
       });
 
       await visit("/");
+
+      assert
+        .dom(".newsletter-subscription-banner .banner-text")
+        .includesText(
+          I18n.t("discourse_newsletter_integration.banner.heading"),
+          "banner has text to prompt the user to subscribe"
+        );
+
       await click(".newsletter-subscription-banner .subscribe-btn");
 
       assert.ok(postRequestSent, "sends a HTTP request to subscribe the user");
-      assert.notOk(
-        exists(".newsletter-subscription-banner"),
-        "banner is no longer visible"
+      assert
+        .dom(".newsletter-subscription-banner .banner-text")
+        .includesText(
+          I18n.t("discourse_newsletter_integration.banner.thank_you"),
+          "banner displays a message to indicate that the user has been subscribed"
+        );
+
+      const preferencesLink = query(
+        ".newsletter-subscription-banner .banner-description a"
       );
+      assert.ok(
+        preferencesLink.href.endsWith("/my/preferences/emails"),
+        "there's a link to preferences"
+      );
+
+      await click(".newsletter-subscription-banner .close-btn");
+
+      assert
+        .dom(".newsletter-subscription-banner")
+        .doesNotExist("clicking the dismiss closes the banner");
     });
 
     test("subscribe button when clicked but the HTTP request fails", async function (assert) {
