@@ -21,7 +21,6 @@
     flex: 1 0 auto;
     flex-direction: column;
     align-items: end;
-    justify-content: space-between;
 
     .close-btn {
       padding: 0;
@@ -37,8 +36,9 @@
       }
     }
 
-    .manage-preferences {
-      font-size: var(--font-down-2);
+    .subscribe-btn {
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 }

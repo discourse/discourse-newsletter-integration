@@ -8,8 +8,10 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 export default class NewsletterBanner extends Component {
   @service site;
   @service currentUser;
+
   @tracked disableControls = false;
   @tracked dismissed = false;
+  @tracked subscribed = false;
 
   get showBanner() {
     return (
@@ -23,26 +25,26 @@ export default class NewsletterBanner extends Component {
   async subscribe() {
     this.disableControls = true;
 
-    let succeeded = true;
     try {
       await ajax("/newsletter-integration/subscriptions", { type: "POST" });
+      this.subscribed = true;
     } catch (e) {
-      succeeded = false;
       popupAjaxError(e);
     }
 
-    this.dismissed = succeeded;
     this.disableControls = false;
   }
 
   @action
   async dismiss() {
     this.dismissed = true;
-    try {
-      await ajax("/newsletter-integration/subscriptions", { type: "DELETE" });
-    } catch (e) {
-      this.dismissed = false;
-      popupAjaxError(e);
+    if (!this.subscribed) {
+      try {
+        await ajax("/newsletter-integration/subscriptions", { type: "DELETE" });
+      } catch (e) {
+        this.dismissed = false;
+        popupAjaxError(e);
+      }
     }
   }
 }
