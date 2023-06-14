@@ -61,6 +61,8 @@ describe NewsletterIntegration::NewsletterSubscriptionController do
       context "with rate limits" do
         before { RateLimiter.enable }
 
+        use_redis_snapshotting
+
         it "doesn't allow the user to subscribe more often than what the rate limits allow" do
           freeze_time do
             NewsletterIntegration::NewsletterUserSubscription.subscription_change_limit_per_hour = 1
@@ -86,8 +88,6 @@ describe NewsletterIntegration::NewsletterSubscriptionController do
               ),
             )
             expect(response.headers["Retry-After"].to_i).to be_within(1).of(3600)
-          ensure
-            RateLimiter.clear_all!
           end
         end
       end
@@ -148,6 +148,8 @@ describe NewsletterIntegration::NewsletterSubscriptionController do
       context "with rate limits" do
         before { RateLimiter.enable }
 
+        use_redis_snapshotting
+
         it "doesn't allow the user to unsubscribe more often than what the rate limits allow" do
           freeze_time do
             NewsletterIntegration::NewsletterUserSubscription.subscription_change_limit_per_hour = 1
@@ -173,8 +175,6 @@ describe NewsletterIntegration::NewsletterSubscriptionController do
               ),
             )
             expect(response.headers["Retry-After"].to_i).to be_within(1).of(3600)
-          ensure
-            RateLimiter.clear_all!
           end
         end
       end
