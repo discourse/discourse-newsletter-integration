@@ -8,7 +8,7 @@ module NewsletterIntegration
     requires_plugin NewsletterIntegration::PLUGIN_NAME
 
     before_action :verify_shared_secret
-    skip_before_action :check_xhr
+    skip_before_action :check_xhr, :redirect_to_login_if_required, :verify_authenticity_token
 
     rescue_from BadSecret do
       render body: "not ok", status: 404

@@ -49,9 +49,20 @@ describe NewsletterIntegration::Webhooks::MailchimpController do
       get "/newsletter-integration/webhooks/mailchimp/#{webhook_secret}"
       expect(response.status).to eq(200)
     end
+
+    it "responds with 200 when the loging_required setting is enabled" do
+      SiteSetting.login_required = true
+
+      get "/newsletter-integration/webhooks/mailchimp/#{webhook_secret}"
+      expect(response.status).to eq(200)
+    end
   end
 
   describe "#sync" do
+    before { ActionController::Base.allow_forgery_protection = true }
+
+    after { ActionController::Base.allow_forgery_protection = false }
+
     context "when the plugin is disabled" do
       before { SiteSetting.discourse_newsletter_integration_enabled = false }
 
