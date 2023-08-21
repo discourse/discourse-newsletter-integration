@@ -19,7 +19,7 @@ To install the Discourse Newsletter Integration Plugin, follow the [standard plu
 
 ## Configuration
 
-See instructions here. _(TODO: link to Meta topic)_
+See instructions here: https://meta.discourse.org/t/discourse-newsletter-integration/275509.
 
 ## Contributing
 
