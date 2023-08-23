@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 es:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "¡Suscríbete a nuestro boletín!"
+        subscribe: "Suscribirse"
+        manage_preferences: "Gestionar preferencias"
+        description: |
+          Mantente al día de las últimas actualizaciones, noticias y debates suscribiéndote al boletín de nuestra comunidad.
+        thank_you: "¡Gracias! ¡Te hemos añadido a nuestro boletín!"
+        added_to_newsletter: |
+          Si cambias de opinión, siempre puedes actualizar tu suscripción en tus <a href='%{preferencesUrl}'>preferencias</a>.
+      preferences:
+        section_head: "Boletín"
+        checkbox_description: "Suscribirse al boletín"
