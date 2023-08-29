@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 ar:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "اشترك في نشرتنا الإخبارية!"
+        subscribe: "اشتراك"
+        manage_preferences: "إدراة التفضيلات"
+        description: |
+          ابقَ مطلعًا على آخر التحديثات والأخبار والمناقشات من خلال الاشتراك في النشرة الإخبارية لمجتمعنا.
+        thank_you: "شكرًا لك! لقد تمت إضافتك إلى نشرتنا الإخبارية!"
+        added_to_newsletter: |
+          إذا غيَّرت رأيك، يمكنك دائمًا تحديث اشتراكك في <a href='%{preferencesUrl}'>تفضيلاتك</a>.
+      preferences:
+        section_head: "النشرة الإخبارية"
+        checkbox_description: "اشترك في النشرة الإخبارية"

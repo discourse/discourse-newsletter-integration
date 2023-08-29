@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 fr:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Activez l'extension d'intégration de la newsletter."
+    discourse_newsletter_integration_mailchimp_api_key: "Clé d'API pour votre compte Mailchimp."
+    discourse_newsletter_integration_mailchimp_list_id: "L'ID de votre audience Mailchimp que vous souhaitez synchroniser avec Discourse."
+    discourse_newsletter_integration_mailchimp_server_prefix: "La partie sous-domaine de l'URL que vous voyez lorsque vous vous connectez à votre compte Mailchimp, par exemple « us14 » et « us19 »."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "Vous avez modifié votre abonnement à la newsletter trop souvent. Veuillez attendre %{time_left} avant de réessayer."

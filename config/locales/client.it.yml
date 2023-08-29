@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 it:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Iscriviti alla nostra newsletter!"
+        subscribe: "Iscriviti"
+        manage_preferences: "Gestisci le preferenze"
+        description: |
+          Non perderti gli ultimi aggiornamenti, le notizie e le discussioni iscrivendoti alla newsletter della nostra community.
+        thank_you: "Grazie! Hai effettuato l'iscrizione alla nostra newsletter!"
+        added_to_newsletter: |
+          Se cambi idea, puoi sempre aggiornare la tua iscrizione nelle <a href='%{preferencesUrl}'>preferenze</a>.
+      preferences:
+        section_head: "Newsletter"
+        checkbox_description: "Iscriviti alla newsletter"

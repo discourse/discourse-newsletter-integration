@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Haber bülteni entegrasyon eklentisini etkinleştirin."
+    discourse_newsletter_integration_mailchimp_api_key: "Mailchimp hesabınız için API anahtarı."
+    discourse_newsletter_integration_mailchimp_list_id: "Discourse ile senkronize etmek istediğiniz Mailchimp Kitlenizin kimliği."
+    discourse_newsletter_integration_mailchimp_server_prefix: "Mailchimp hesabınıza giriş yaptığınızda gördüğünüz URL'nin alt etki alanı kısmı, örneğin `us14` ve `us19`."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "Haber bülteni aboneliğinizi çok fazla kez değiştirdiniz. Lütfen tekrar denemeden önce %{time_left} bekleyin."

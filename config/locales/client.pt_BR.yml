@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Assine nosso Boletim Informativo!"
+        subscribe: "Assinar"
+        manage_preferences: "Gerenciar preferências"
+        description: |
+          Fique de olho nas atualizações mais recentes, notícias e discussões assinando o boletim informativo da nossa comunidade.
+        thank_you: "Valeu! Adicionamos você ao nosso boletim informativo!"
+        added_to_newsletter: |
+          Se mudar de ideia, atualize sua assinatura o quando quiser em <a href='%{preferencesUrl}'>preferências</a>.
+      preferences:
+        section_head: "Boletim Informativo"
+        checkbox_description: "Assinar o boletim informativo"

@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 ru:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Включить плагин интеграции рассылки."
+    discourse_newsletter_integration_mailchimp_api_key: "Ключ API для аккаунта Mailchimp."
+    discourse_newsletter_integration_mailchimp_list_id: "Идентификатор аудитории Mailchimp для синхронизации с Discourse."
+    discourse_newsletter_integration_mailchimp_server_prefix: "Поддоменная часть URL-адреса, которая отображается при входе в аккаунт Mailchimp, например `us14` или `us19`."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "Вы слишком много раз меняли настройки подписки на рассылку. Повторить попытку можно будет через %{time_left}."

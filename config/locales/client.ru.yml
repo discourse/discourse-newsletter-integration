@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 ru:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Подписывайтесь на рассылку!"
+        subscribe: "Подписаться"
+        manage_preferences: "Управление настройками"
+        description: |
+          Подпишитесь на рассылку сообщества и будьте в курсе актуальной информации, новостей и обсуждений.
+        thank_you: "Спасибо! Вы добавлены в список рассылки!"
+        added_to_newsletter: |
+          Если передумаете, изменить параметры подписки можно в <a href='%{preferencesUrl}'>настройках</a>.
+      preferences:
+        section_head: "Рассылка"
+        checkbox_description: "Подписаться на рассылку"

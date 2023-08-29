@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 fi:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Tilaa uutiskirjeemme!"
+        subscribe: "Tilaa"
+        manage_preferences: "Hallinnoi asetuksia"
+        description: |
+          Pysy ajan tasalla viimeisimmistä päivityksistä, uutisista ja keskusteluista tilaamalla yhteisömme uutiskirje.
+        thank_you: "Kiitos! Sinut on lisätty uutiskirjeeseemme!"
+        added_to_newsletter: |
+          Jos muutat mielesi, voit päivittää tilauksesi milloin tahansa <a href='%{preferencesUrl}'>asetuksissasi</a>.
+      preferences:
+        section_head: "Uutiskirje"
+        checkbox_description: "Tilaa uutiskirje"

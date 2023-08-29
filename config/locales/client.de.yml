@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 de:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Abonniere unseren Newsletter!"
+        subscribe: "Abonnieren"
+        manage_preferences: "Einstellungen verwalten"
+        description: |
+          Bleib auf dem Laufenden über die neuesten Updates, Nachrichten und Diskussionen, indem du unseren Community-Newsletter abonnierst.
+        thank_you: "Vielen Dank! Du wurdest zu unserem Newsletter hinzugefügt!"
+        added_to_newsletter: |
+          Wenn du deine Meinung änderst, kannst du dein Abonnement jederzeit in deinen <a href='%{preferencesUrl}'>Einstellungen</a>aktualisieren.
+      preferences:
+        section_head: "Newsletter"
+        checkbox_description: "Newsletter abonnieren"
