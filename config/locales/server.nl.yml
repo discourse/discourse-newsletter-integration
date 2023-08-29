@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 nl:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Schakel de nieuwsbriefintegratieplug-in in."
+    discourse_newsletter_integration_mailchimp_api_key: "API-sleutel voor je Mailchimp-account."
+    discourse_newsletter_integration_mailchimp_list_id: "De ID van je Mailchimp Audience die je met Discourse wilt synchroniseren."
+    discourse_newsletter_integration_mailchimp_server_prefix: "Het subdomeingedeelte van de URL dat je ziet als je inlogt op je Mailchimp-account, bijvoorbeeld 'us14' of 'us19'."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "Je hebt je nieuwsbriefabonnement te vaak gewijzigd. Wacht %{time_left} voordat je het opnieuw probeert."

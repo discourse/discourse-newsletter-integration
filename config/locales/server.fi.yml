@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 fi:
+  site_settings:
+    discourse_newsletter_integration_enabled: "Ota uutiskirjeintegraatiolisäosa käyttöön."
+    discourse_newsletter_integration_mailchimp_api_key: "Mailchimp-tilisi API-avain."
+    discourse_newsletter_integration_mailchimp_list_id: "Sen Mailchimp-yleisön tunnus, jonka haluat synkronoida Discourseen."
+    discourse_newsletter_integration_mailchimp_server_prefix: "URL-osoitteen aliverkkotunnus, jonka näet kirjautuessasi Mailchimp-tilillesi, esim. us14 ja us19."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "Olet muuttanut uutiskirjeen tilaustasi liian monta kertaa. Odota %{time_left} ennen kuin yrität uudelleen."

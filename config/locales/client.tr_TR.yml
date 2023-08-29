@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Haber Bültenimize abone olun!"
+        subscribe: "Abone Olun"
+        manage_preferences: "Tercihleri yönetin"
+        description: |
+          Topluluk haber bültenimize abone olarak en son güncellemelerden, haberlerden ve tartışmalardan haberdar olun.
+        thank_you: "Teşekkür ederiz! Haber bültenimize eklendiniz!"
+        added_to_newsletter: |
+          Fikrinizi değiştirirseniz aboneliğinizi dilediğiniz zaman <a href='%{preferencesUrl}'>tercihlerinizden</a> güncelleyebilirsiniz.
+      preferences:
+        section_head: "Haber Bülteni"
+        checkbox_description: "Haber bültenine abone olun"

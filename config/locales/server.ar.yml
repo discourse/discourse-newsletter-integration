@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 ar:
+  site_settings:
+    discourse_newsletter_integration_enabled: "تفعيل المكوِّن الإضافي لتكامل النشرة الإخبارية."
+    discourse_newsletter_integration_mailchimp_api_key: "مفتاح API لحسابك على Mailchimp."
+    discourse_newsletter_integration_mailchimp_list_id: "معرِّف جمهور Mailchimp الخاص بك الذي تريد مزامنته مع Discourse."
+    discourse_newsletter_integration_mailchimp_server_prefix: "جزء النطاق الفرعي من عنوان URL الذي تراه عند تسجيل الدخول إلى حسابك على Mailchimp؛ على سبيل المثال، `us14` و`us19`."
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "لقد غيَّرت اشتراكك في النشرة الإخبارية مرات كثيرة جدًا. يُرجى الانتظار لمدة %{time_left} قبل إعادة المحاولة."

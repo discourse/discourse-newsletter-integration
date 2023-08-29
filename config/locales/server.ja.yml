@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 ja:
+  site_settings:
+    discourse_newsletter_integration_enabled: "ニュースレター統合プラグインを有効にする。"
+    discourse_newsletter_integration_mailchimp_api_key: "Mailchimp アカウントの API キー。"
+    discourse_newsletter_integration_mailchimp_list_id: "Discourse と同期する Mailchimp Audience の ID。"
+    discourse_newsletter_integration_mailchimp_server_prefix: "Mailchimp アカウントにログインする際に表示される URL のサブドメイン部分（例: `us14`、`us19`）。"
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "ニュースレター購読の変更回数が多すぎます。%{time_left}経ってからもう一度お試しください。"

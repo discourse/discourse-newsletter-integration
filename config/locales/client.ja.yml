@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 ja:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "ニュースレターを購読しましょう！"
+        subscribe: "購読する"
+        manage_preferences: "設定を管理する"
+        description: |
+          コミュニティーニュースレターを購読すると、最新の更新、ニュース、およびディスカッションに関する情報を入手できます。
+        thank_you: "ありがとうございました！ニュースレターの購読を登録しました！"
+        added_to_newsletter: |
+          気が変わったら、<a href='%{preferencesUrl}'>設定</a>でいつでも購読を変更できます。
+      preferences:
+        section_head: "ニュースレター"
+        checkbox_description: "ニュースレターを購読する"

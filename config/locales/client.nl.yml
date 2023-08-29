@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 nl:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Abonneer op onze nieuwsbrief!"
+        subscribe: "Abonneren"
+        manage_preferences: "Voorkeuren beheren"
+        description: |
+          Blijf op de hoogte van de laatste updates, nieuws en discussies door je te abonneren op onze communitynieuwsbrief.
+        thank_you: "Bedankt! Je bent toegevoegd aan onze nieuwsbrief!"
+        added_to_newsletter: |
+          Als je van gedachten verandert, kun je je abonnement altijd bijwerken in je <a href='%{preferencesUrl}'>voorkeuren</a>.
+      preferences:
+        section_head: "Nieuwsbrief"
+        checkbox_description: "Abonneren op nieuwsbrief"

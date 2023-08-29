@@ -5,3 +5,11 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  site_settings:
+    discourse_newsletter_integration_enabled: "启用简报集成插件。"
+    discourse_newsletter_integration_mailchimp_api_key: "Mailchimp 帐户的 API 密钥。"
+    discourse_newsletter_integration_mailchimp_list_id: "您要与 Discourse 同步的 Mailchimp Audience 的 ID。"
+    discourse_newsletter_integration_mailchimp_server_prefix: "您登录 Mailchimp 帐户时看到的 URL 的子域部分，例如 `us14` 和 `us19`。"
+  rate_limiter:
+    by_type:
+      newsletter_integration_change_subscription: "您更改简报订阅的次数过多。请等待 %{time_left}后再试。"

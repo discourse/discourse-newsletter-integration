@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 fr:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "Abonnez-vous à notre newsletter !"
+        subscribe: "S'abonner"
+        manage_preferences: "Gérer les préférences"
+        description: |
+          Restez informé(e) des dernières mises à jour, actualités et discussions en vous abonnant à notre newsletter communautaire.
+        thank_you: "Merci ! Vous avez été ajouté(e) à notre newsletter !"
+        added_to_newsletter: |
+          Si vous changez d'avis, vous pouvez toujours mettre à jour votre abonnement dans vos <a href='%{preferencesUrl}'>préférences</a>.
+      preferences:
+        section_head: "Newsletter"
+        checkbox_description: "Abonnez-vous à la newsletter"

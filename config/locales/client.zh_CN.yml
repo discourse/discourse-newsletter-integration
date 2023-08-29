@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  js:
+    discourse_newsletter_integration:
+      banner:
+        heading: "订阅我们的简报！"
+        subscribe: "订阅"
+        manage_preferences: "管理偏好设置"
+        description: |
+          订阅我们的社区简报，第一时间了解最新动态、新闻和讨论。
+        thank_you: "谢谢！您已加入我们的简报！"
+        added_to_newsletter: |
+          如果您改变主意，可以随时在<a href='%{preferencesUrl}'>偏好设置</a>中更新您的订阅。
+      preferences:
+        section_head: "简报"
+        checkbox_description: "订阅简报"
