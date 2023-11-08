@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # name: discourse-newsletter-integration
-# about: A plugin to add integrations with mailing list services to Discourse
+# about: Adds customizable newsletter subscription services to your instance.
+# meta_topic_id: 275509
 # version: 0.0.1
 # authors: Discourse
 # url: https://github.com/discourse/discourse-newsletter-integration
