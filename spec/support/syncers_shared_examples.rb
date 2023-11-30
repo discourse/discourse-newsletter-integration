@@ -5,7 +5,7 @@ shared_context "subscription syncers common spec" do |provider:|
   # rubocop:enable RSpec/ContextWording
   fab!(:subscription) { Fabricate(:newsletter_user_subscription) }
 
-  subject do
+  subject(:syncer) do
     described_class.new(
       user: subscription.user,
       newsletter_integration_id: subscription.newsletter_integration_id,
@@ -14,13 +14,12 @@ shared_context "subscription syncers common spec" do |provider:|
 
   before { configure_required_settings }
 
-
   describe "#sync" do
     it "sends a request to subscribe the user if the subscription is active" do
       subscription.update!(active: true)
 
       stub = setup_subscribe_request_stub(provider, subscription.user)
-      subject.sync
+      syncer.sync
       expect(stub).to have_been_requested
     end
 
@@ -28,7 +27,7 @@ shared_context "subscription syncers common spec" do |provider:|
       subscription.update!(active: false)
 
       stub = setup_unsubscribe_request_stub(provider, subscription.user)
-      subject.sync
+      syncer.sync
       expect(stub).to have_been_requested
     end
   end
