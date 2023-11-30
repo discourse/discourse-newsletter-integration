@@ -107,7 +107,7 @@ describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
           setup_mailchimp_stub(
             :post,
             "3.0/lists/#{SiteSetting.discourse_newsletter_integration_mailchimp_list_id}/webhooks",
-            with_block: ->(req) {
+            with_block: ->(req) do
               match_data =
                 JSON.parse(req.body)["url"].match(
                   %r(\Ahttp://test.localhost/newsletter-integration/webhooks/mailchimp/(\h{32})\z),
@@ -115,7 +115,7 @@ describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
               next false if !match_data
               new_secret = match_data[1]
               true
-            },
+            end,
           )
 
         described_class.new.execute
@@ -136,11 +136,11 @@ describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
           setup_mailchimp_stub(
             :post,
             "3.0/lists/#{SiteSetting.discourse_newsletter_integration_mailchimp_list_id}/webhooks",
-            with_block: ->(req) {
+            with_block: ->(req) do
               JSON.parse(req.body)["url"].match?(
                 %r(\Ahttp://test.localhost/forum/newsletter-integration/webhooks/mailchimp/(\h{32})\z),
               )
-            },
+            end,
           )
 
         described_class.new.execute
