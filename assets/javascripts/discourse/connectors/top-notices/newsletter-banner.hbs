@@ -21,13 +21,13 @@
       {{/if}}
     </div>
     <div class="banner-controls">
-      <DButton @icon="times" @class="close-btn" @action={{action "dismiss"}} />
+      <DButton @icon="times" @action={{action "dismiss"}} class="close-btn" />
       {{#unless this.subscribed}}
         <DButton
-          @class="btn-primary subscribe-btn"
           @label="discourse_newsletter_integration.banner.subscribe"
           @action={{action "subscribe"}}
           @disabled={{this.disableControls}}
+          class="btn-primary subscribe-btn"
         />
       {{/unless}}
     </div>
