@@ -1,12 +1,12 @@
+import { click, visit } from "@ember/test-helpers";
+import { test } from "qunit";
+import pretender from "discourse/tests/helpers/create-pretender";
 import {
   acceptance,
   exists,
   query,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
-import { click, visit } from "@ember/test-helpers";
-import { test } from "qunit";
-import pretender from "discourse/tests/helpers/create-pretender";
 import I18n from "I18n";
 
 acceptance(
