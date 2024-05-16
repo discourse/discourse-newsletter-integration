@@ -4,7 +4,7 @@ require "rails_helper"
 
 describe UserSerializer do
   describe "#newsletter_integration_subscribe_global_newsletter" do
-    fab!(:user) { Fabricate(:user) }
+    fab!(:user)
     fab!(:subscription) { Fabricate(:newsletter_user_subscription, user: user) }
 
     let(:json) { UserSerializer.new(user, scope: Guardian.new(user), root: nil).as_json }

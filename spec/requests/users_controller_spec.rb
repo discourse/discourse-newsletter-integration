@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe UsersController do
-  fab!(:user) { Fabricate(:user) }
+  fab!(:user)
 
   before { sign_in(user) }
 
