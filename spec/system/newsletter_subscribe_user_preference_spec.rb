@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe "Newsletter Subsribe User Preference", type: :system, js: true do
-  fab!(:user) { Fabricate(:user) }
+  fab!(:user)
   fab!(:subscription) { Fabricate(:newsletter_user_subscription, user: user) }
 
   before do

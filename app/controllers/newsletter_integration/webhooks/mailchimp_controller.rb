@@ -2,8 +2,10 @@
 
 module NewsletterIntegration
   class Webhooks::MailchimpController < ::ApplicationController
+    # rubocop:disable Discourse/Plugins/CallRequiresPlugin
     class BadSecret < StandardError
     end
+    # rubocop:enable Discourse/Plugins/CallRequiresPlugin
 
     requires_plugin NewsletterIntegration::PLUGIN_NAME
 

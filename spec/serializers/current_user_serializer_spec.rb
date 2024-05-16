@@ -4,7 +4,7 @@ require "rails_helper"
 
 describe CurrentUserSerializer do
   describe "#show_newsletter_subscription_banner" do
-    fab!(:user) { Fabricate(:user) }
+    fab!(:user)
     fab!(:subscription) { Fabricate(:newsletter_user_subscription, user: user) }
 
     let(:json) { CurrentUserSerializer.new(user, scope: Guardian.new(user), root: nil).as_json }
