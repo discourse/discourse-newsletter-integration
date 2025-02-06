@@ -7,7 +7,7 @@ import {
   query,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
-import I18n from "I18n";
+import { i18n } from "discourse-i18n";
 
 acceptance(
   "Discourse Newsletter Integration - Newsletter Banner - Anons",
@@ -114,7 +114,7 @@ acceptance(
       assert
         .dom(".newsletter-subscription-banner .banner-text")
         .includesText(
-          I18n.t("discourse_newsletter_integration.banner.heading"),
+          i18n("discourse_newsletter_integration.banner.heading"),
           "banner has text to prompt the user to subscribe"
         );
 
@@ -124,7 +124,7 @@ acceptance(
       assert
         .dom(".newsletter-subscription-banner .banner-text")
         .includesText(
-          I18n.t("discourse_newsletter_integration.banner.thank_you"),
+          i18n("discourse_newsletter_integration.banner.thank_you"),
           "banner displays a message to indicate that the user has been subscribed"
         );
 
