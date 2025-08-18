@@ -77,15 +77,11 @@ export default class NewsletterBanner extends Component {
           {{/if}}
         </div>
         <div class="banner-controls">
-          <DButton
-            @icon="xmark"
-            @action={{action "dismiss"}}
-            class="close-btn"
-          />
+          <DButton @icon="xmark" @action={{this.dismiss}} class="close-btn" />
           {{#unless this.subscribed}}
             <DButton
               @label="discourse_newsletter_integration.banner.subscribe"
-              @action={{action "subscribe"}}
+              @action={{this.subscribe}}
               @disabled={{this.disableControls}}
               class="btn-primary subscribe-btn"
             />
