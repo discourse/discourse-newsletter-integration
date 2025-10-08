@@ -13,13 +13,13 @@ module NewsletterIntegration
     skip_before_action :check_xhr, :redirect_to_login_if_required, :verify_authenticity_token
 
     rescue_from BadSecret do
-      render body: "not ok", status: 404
+      render body: "not ok", status: :not_found
     end
 
     # when a webhook is created on Mailchimp, they test the callback URL with a
     # GET request and expect a 200 response to allow the webhook to be created.
     def verify
-      render body: "ok", status: 200
+      render body: "ok", status: :ok
     end
 
     def sync
@@ -34,7 +34,7 @@ module NewsletterIntegration
         desired_active_state = false
       else
         Rails.logger.warn("Mailchimp webhooks controller: unknown event type #{type.inspect}.")
-        render body: "not ok", status: 422
+        render body: "not ok", status: :unprocessable_content
         return
       end
 
@@ -48,7 +48,7 @@ module NewsletterIntegration
         subscription.active = desired_active_state
         subscription.save!
       end
-      render body: "ok", status: 200
+      render body: "ok", status: :ok
     end
 
     private

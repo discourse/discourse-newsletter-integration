@@ -2,12 +2,12 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import { htmlSafe } from "@ember/template";
 import DButton from "discourse/components/d-button";
 import emoji from "discourse/helpers/emoji";
-import getUrl from "discourse/helpers/get-url";
-import htmlSafe from "discourse/helpers/html-safe";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
+import getUrl from "discourse/lib/get-url";
 import { i18n } from "discourse-i18n";
 
 export default class NewsletterBanner extends Component {

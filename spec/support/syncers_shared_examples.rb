@@ -3,7 +3,7 @@
 # rubocop:disable RSpec/ContextWording
 shared_context "subscription syncers common spec" do |provider:|
   # rubocop:enable RSpec/ContextWording
-  fab!(:subscription) { Fabricate(:newsletter_user_subscription) }
+  fab!(:subscription, :newsletter_user_subscription)
 
   subject(:syncer) do
     described_class.new(

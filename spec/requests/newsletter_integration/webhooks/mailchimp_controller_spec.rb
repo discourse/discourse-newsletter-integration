@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe NewsletterIntegration::Webhooks::MailchimpController do
-  fab!(:subscription) { Fabricate(:newsletter_user_subscription) }
+  fab!(:subscription, :newsletter_user_subscription)
   let(:webhook_secret) { "cca5ee606fb2be5b536547665722969f" }
 
   def subscribe_event_fixture(overrides = {})
