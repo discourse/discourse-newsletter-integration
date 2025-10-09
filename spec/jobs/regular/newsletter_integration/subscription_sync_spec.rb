@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe Jobs::NewsletterIntegration::SubscriptionSync do
-  fab!(:subscription) { Fabricate(:newsletter_user_subscription) }
+  fab!(:subscription, :newsletter_user_subscription)
 
   before { configure_required_settings }
 

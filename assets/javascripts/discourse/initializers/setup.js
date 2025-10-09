@@ -4,7 +4,7 @@ export default {
   name: "discourse-newsletter-integration-setup",
 
   initialize() {
-    withPluginApi("1.6.0", (api) => {
+    withPluginApi((api) => {
       const currentUser = api.getCurrentUser();
       if (!currentUser) {
         return;
