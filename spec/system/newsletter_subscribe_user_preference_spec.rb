@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
-describe "Newsletter Subsribe User Preference", type: :system, js: true do
+describe "Newsletter Subsribe User Preference" do
   fab!(:user)
   fab!(:subscription) { Fabricate(:newsletter_user_subscription, user: user) }
 

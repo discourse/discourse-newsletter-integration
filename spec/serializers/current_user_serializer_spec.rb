@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 describe CurrentUserSerializer do
   describe "#show_newsletter_subscription_banner" do
     fab!(:user)

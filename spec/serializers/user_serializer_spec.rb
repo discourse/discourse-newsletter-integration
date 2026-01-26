@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 describe UserSerializer do
   describe "#newsletter_integration_subscribe_global_newsletter" do
     fab!(:user)
