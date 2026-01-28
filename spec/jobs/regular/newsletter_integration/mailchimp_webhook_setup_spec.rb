@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
   describe "#execute" do
     let(:old_secret) { SecureRandom.hex }

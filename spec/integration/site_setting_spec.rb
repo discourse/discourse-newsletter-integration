@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 describe "site setting checks" do
   describe "discourse_newsletter_integration_mailchimp_server_prefix setting" do
     it "doesn't allow non-alphanumeric characters to prevent SSRF" do
