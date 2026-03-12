@@ -3,8 +3,6 @@ import { test } from "qunit";
 import pretender from "discourse/tests/helpers/create-pretender";
 import {
   acceptance,
-  exists,
-  query,
   updateCurrentUser,
 } from "discourse/tests/helpers/qunit-helpers";
 import { i18n } from "discourse-i18n";
@@ -19,10 +17,9 @@ acceptance(
     test("banner visibility", async function (assert) {
       await visit("/");
 
-      assert.notOk(
-        exists(".newsletter-subscription-banner"),
-        "banner is not visible to anons"
-      );
+      assert
+        .dom(".newsletter-subscription-banner")
+        .doesNotExist("banner is not visible to anons");
     });
   }
 );
@@ -45,7 +42,7 @@ acceptance(
 
       await visit("/");
 
-      assert.ok(exists(".newsletter-subscription-banner"), "banner is visible");
+      assert.dom(".newsletter-subscription-banner").exists("banner is visible");
     });
 
     test("when show_newsletter_subscription_banner User property is false", async function (assert) {
@@ -55,10 +52,9 @@ acceptance(
 
       await visit("/");
 
-      assert.notOk(
-        exists(".newsletter-subscription-banner"),
-        "banner is not visible"
-      );
+      assert
+        .dom(".newsletter-subscription-banner")
+        .doesNotExist("banner is not visible");
     });
 
     test("dismiss button when clicked and the HTTP request succeeds", async function (assert) {
@@ -72,14 +68,13 @@ acceptance(
       await visit("/");
       await click(".newsletter-subscription-banner .close-btn");
 
-      assert.ok(
+      assert.true(
         deleteRequestSent,
         "sends a HTTP request to persist the banner dismissed state"
       );
-      assert.notOk(
-        exists(".newsletter-subscription-banner"),
-        "banner is no longer visible"
-      );
+      assert
+        .dom(".newsletter-subscription-banner")
+        .doesNotExist("banner is no longer visible");
     });
 
     test("dismiss button when clicked but the HTTP request fails", async function (assert) {
@@ -90,15 +85,15 @@ acceptance(
       await visit("/");
       await click(".newsletter-subscription-banner .close-btn");
 
-      assert.ok(
-        exists(".newsletter-subscription-banner"),
-        "banner remains visible"
-      );
-      assert.strictEqual(
-        query("#dialog-holder .dialog-body").textContent.trim(),
-        "something went wrong",
-        "a popup appears with the error message from the server"
-      );
+      assert
+        .dom(".newsletter-subscription-banner")
+        .exists("banner remains visible");
+      assert
+        .dom("#dialog-holder .dialog-body")
+        .hasText(
+          "something went wrong",
+          "a popup appears with the error message from the server"
+        );
     });
 
     test("subscribe button when clicked and the HTTP request succeeds", async function (assert) {
@@ -120,7 +115,10 @@ acceptance(
 
       await click(".newsletter-subscription-banner .subscribe-btn");
 
-      assert.ok(postRequestSent, "sends a HTTP request to subscribe the user");
+      assert.true(
+        postRequestSent,
+        "sends a HTTP request to subscribe the user"
+      );
       assert
         .dom(".newsletter-subscription-banner .banner-text")
         .includesText(
@@ -128,13 +126,13 @@ acceptance(
           "banner displays a message to indicate that the user has been subscribed"
         );
 
-      const preferencesLink = query(
-        ".newsletter-subscription-banner .banner-description a"
-      );
-      assert.ok(
-        preferencesLink.href.endsWith("/my/preferences/emails"),
-        "there's a link to preferences"
-      );
+      assert
+        .dom(".newsletter-subscription-banner .banner-description a")
+        .hasAttribute(
+          "href",
+          /\/my\/preferences\/emails$/,
+          "there's a link to preferences"
+        );
 
       await click(".newsletter-subscription-banner .close-btn");
 
@@ -151,15 +149,15 @@ acceptance(
       await visit("/");
       await click(".newsletter-subscription-banner .subscribe-btn");
 
-      assert.ok(
-        exists(".newsletter-subscription-banner"),
-        "banner remains visible"
-      );
-      assert.strictEqual(
-        query("#dialog-holder .dialog-body").textContent.trim(),
-        "chill bro you did this too many times",
-        "a popup appears with the error message from the server"
-      );
+      assert
+        .dom(".newsletter-subscription-banner")
+        .exists("banner remains visible");
+      assert
+        .dom("#dialog-holder .dialog-body")
+        .hasText(
+          "chill bro you did this too many times",
+          "a popup appears with the error message from the server"
+        );
     });
   }
 );
