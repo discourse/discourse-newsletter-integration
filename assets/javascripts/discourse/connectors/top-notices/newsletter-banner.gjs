@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
-import { htmlSafe } from "@ember/template";
+import { trustHTML } from "@ember/template";
 import DButton from "discourse/components/d-button";
 import emoji from "discourse/helpers/emoji";
 import { ajax } from "discourse/lib/ajax";
@@ -61,7 +61,7 @@ export default class NewsletterBanner extends Component {
             <h3>{{i18n "discourse_newsletter_integration.banner.thank_you"}}
               {{emoji "tada"}}</h3>
             <p class="banner-description">
-              {{htmlSafe
+              {{trustHTML
                 (i18n
                   "discourse_newsletter_integration.banner.added_to_newsletter"
                   preferencesUrl=(getUrl "/my/preferences/emails")
