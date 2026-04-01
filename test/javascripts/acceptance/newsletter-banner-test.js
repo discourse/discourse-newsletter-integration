@@ -1,6 +1,6 @@
 import { click, visit } from "@ember/test-helpers";
 import { test } from "qunit";
-import pretender from "discourse/tests/helpers/create-pretender";
+import pretender, { response } from "discourse/tests/helpers/create-pretender";
 import {
   acceptance,
   updateCurrentUser,
@@ -62,7 +62,7 @@ acceptance(
 
       pretender.delete("/newsletter-integration/subscriptions", () => {
         deleteRequestSent = true;
-        return [200, {}, ""];
+        return response("");
       });
 
       await visit("/");
@@ -79,7 +79,7 @@ acceptance(
 
     test("dismiss button when clicked but the HTTP request fails", async function (assert) {
       pretender.delete("/newsletter-integration/subscriptions", () => {
-        return [403, {}, { error: "something went wrong" }];
+        return response(403, { error: "something went wrong" });
       });
 
       await visit("/");
@@ -101,7 +101,7 @@ acceptance(
 
       pretender.post("/newsletter-integration/subscriptions", () => {
         postRequestSent = true;
-        return [200, {}, ""];
+        return response("");
       });
 
       await visit("/");
@@ -143,7 +143,9 @@ acceptance(
 
     test("subscribe button when clicked but the HTTP request fails", async function (assert) {
       pretender.post("/newsletter-integration/subscriptions", () => {
-        return [429, {}, { error: "chill bro you did this too many times" }];
+        return response(429, {
+          error: "chill bro you did this too many times",
+        });
       });
 
       await visit("/");
