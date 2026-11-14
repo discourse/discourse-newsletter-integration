@@ -8,6 +8,7 @@ module Jobs
 
       def execute(args = {})
         return if !::NewsletterIntegration.plugin_configured?
+        return if SiteSetting.discourse_newsletter_integration_provider != "mailchimp"
 
         current_secret =
           SiteSetting.discourse_newsletter_integration_mailchimp_webhook_secret.presence

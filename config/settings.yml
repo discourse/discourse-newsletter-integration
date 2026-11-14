@@ -2,6 +2,12 @@ plugins:
   discourse_newsletter_integration_enabled:
     default: false
     client: true
+  discourse_newsletter_integration_provider:
+    type: enum
+    default: mailchimp
+    choices:
+      - mailchimp
+      - listmonk
   discourse_newsletter_integration_mailchimp_api_key:
     default: ""
     secret: true
@@ -13,3 +19,16 @@ plugins:
     default: ""
     secret: true
     hidden: true
+
+  discourse_newsletter_integration_listmonk_url:
+    default: ""
+  discourse_newsletter_integration_listmonk_api_username:
+    default: ""
+  discourse_newsletter_integration_listmonk_api_token:
+    default: ""
+    secret: true
+  discourse_newsletter_integration_listmonk_list_id:
+    default: 0
+    min: 0
+  discourse_newsletter_integration_listmonk_preconfirm_subscriptions:
+    default: true

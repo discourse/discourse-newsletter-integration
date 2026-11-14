@@ -14,6 +14,19 @@ describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
       }.from("")
     end
 
+    it "ignores a queued job after switching to listmonk" do
+      SiteSetting.discourse_newsletter_integration_provider = "listmonk"
+      SiteSetting.discourse_newsletter_integration_listmonk_url = "https://listmonk.example.com"
+      SiteSetting.discourse_newsletter_integration_listmonk_api_username = "discourse"
+      SiteSetting.discourse_newsletter_integration_listmonk_api_token = "secret-token"
+      SiteSetting.discourse_newsletter_integration_listmonk_list_id = 42
+
+      expect { described_class.new.execute }.not_to change {
+        SiteSetting.discourse_newsletter_integration_mailchimp_webhook_secret
+      }
+      # WebMock rejects unexpected HTTP requests, including Mailchimp requests.
+    end
+
     context "when there's an existing webhook that matches the current secret" do
       it "deletes the existing webhook and creates a new one with a new secret" do
         SiteSetting.discourse_newsletter_integration_mailchimp_webhook_secret = old_secret
