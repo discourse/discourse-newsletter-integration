@@ -60,26 +60,11 @@ describe Jobs::NewsletterIntegration::SubscriptionSync do
     end
 
     context "when listmonk is configured" do
-      before do
-        SiteSetting.discourse_newsletter_integration_provider = "listmonk"
-        SiteSetting.discourse_newsletter_integration_listmonk_url = "https://listmonk.example.com"
-        SiteSetting.discourse_newsletter_integration_listmonk_api_username = "discourse"
-        SiteSetting.discourse_newsletter_integration_listmonk_api_token = "secret-token"
-        SiteSetting.discourse_newsletter_integration_listmonk_list_id = 42
-      end
+      before { configure_listmonk_settings }
 
       it "uses the listmonk syncer" do
         subscription.update!(active: false)
-        query =
-          URI.encode_www_form(
-            query: "subscribers.email = '#{subscription.user.email.downcase}'",
-            per_page: 1,
-          )
-        stub =
-          stub_request(:get, "https://listmonk.example.com/api/subscribers?#{query}").to_return(
-            status: 200,
-            body: { data: { results: [] } }.to_json,
-          )
+        stub = stub_listmonk_subscriber_lookup(subscription.user)
 
         described_class.new.execute(
           {

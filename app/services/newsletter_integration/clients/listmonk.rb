@@ -19,7 +19,7 @@ module NewsletterIntegration
         uri = URI("#{@base_url}/#{path.to_s.sub(%r{\A/+}, "")}")
         uri.query = URI.encode_www_form(query) if query.present?
 
-        http = Net::HTTP.new(uri.host, uri.port)
+        http = FinalDestination::HTTP.new(uri.host, uri.port)
         http.use_ssl = uri.scheme == "https"
         http.open_timeout = OPEN_TIMEOUT
         http.read_timeout = READ_TIMEOUT

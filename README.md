@@ -39,6 +39,10 @@ listmonk is available as an alternative newsletter provider. Select `listmonk` i
 - `discourse_newsletter_integration_listmonk_list_id` — numeric listmonk list ID.
 - `discourse_newsletter_integration_listmonk_preconfirm_subscriptions` — when enabled, Discourse subscriptions are immediately confirmed. Disable it to use listmonk double opt-in.
 
+The base URL must use HTTP or HTTPS and must not contain credentials, a query string, or a fragment. Optional ports and subpaths are supported. API usernames use listmonk’s letters, digits, `_`, `-`, `.`, and `@` format (at least three characters); generated API tokens contain 48 alphanumeric characters. Empty settings are allowed while the provider is not configured.
+
+Outbound requests use Discourse’s `FinalDestination::HTTP` SSRF protection.
+
 The provider creates subscribers when necessary, adds existing subscribers to the configured list, and marks the list membership as unsubscribed when a user opts out in Discourse. Mailchimp remains the default provider for backward compatibility.
 
 The listmonk integration synchronizes subscription changes from Discourse to listmonk only. Changes made directly in listmonk, including email unsubscribe links and double opt-in confirmation, are not synchronized back to Discourse.

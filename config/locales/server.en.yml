@@ -1,5 +1,7 @@
 en:
   site_settings:
+    errors:
+      newsletter_integration_listmonk_url_invalid: "Enter an HTTP or HTTPS URL with a hostname, without credentials, a query string, or a fragment."
     discourse_newsletter_integration_enabled: "Enable the newsletter integration plugin."
     discourse_newsletter_integration_provider: "Newsletter provider to synchronize with Discourse."
     discourse_newsletter_integration_listmonk_url: "Base URL of your listmonk instance, e.g. `https://listmonk.example.com`."

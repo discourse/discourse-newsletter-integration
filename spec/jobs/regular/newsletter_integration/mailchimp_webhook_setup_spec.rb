@@ -15,11 +15,7 @@ describe Jobs::NewsletterIntegration::MailchimpWebhookSetup do
     end
 
     it "ignores a queued job after switching to listmonk" do
-      SiteSetting.discourse_newsletter_integration_provider = "listmonk"
-      SiteSetting.discourse_newsletter_integration_listmonk_url = "https://listmonk.example.com"
-      SiteSetting.discourse_newsletter_integration_listmonk_api_username = "discourse"
-      SiteSetting.discourse_newsletter_integration_listmonk_api_token = "secret-token"
-      SiteSetting.discourse_newsletter_integration_listmonk_list_id = 42
+      configure_listmonk_settings
 
       expect { described_class.new.execute }.not_to change {
         SiteSetting.discourse_newsletter_integration_mailchimp_webhook_secret
