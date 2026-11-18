@@ -17,10 +17,21 @@ module ::NewsletterIntegration
   GLOBAL_NEWSLETTER_ID = -1
 
   def self.plugin_configured?
-    SiteSetting.discourse_newsletter_integration_enabled &&
+    return false if !SiteSetting.discourse_newsletter_integration_enabled
+
+    case SiteSetting.discourse_newsletter_integration_provider
+    when "mailchimp"
       SiteSetting.discourse_newsletter_integration_mailchimp_api_key.present? &&
-      SiteSetting.discourse_newsletter_integration_mailchimp_list_id.present? &&
-      SiteSetting.discourse_newsletter_integration_mailchimp_server_prefix.present?
+        SiteSetting.discourse_newsletter_integration_mailchimp_list_id.present? &&
+        SiteSetting.discourse_newsletter_integration_mailchimp_server_prefix.present?
+    when "listmonk"
+      SiteSetting.discourse_newsletter_integration_listmonk_url.present? &&
+        SiteSetting.discourse_newsletter_integration_listmonk_api_username.present? &&
+        SiteSetting.discourse_newsletter_integration_listmonk_api_token.present? &&
+        SiteSetting.discourse_newsletter_integration_listmonk_list_id.to_i.positive?
+    else
+      false
+    end
   end
 end
 
@@ -59,6 +70,7 @@ after_initialize do
 
   on(:site_setting_changed) do |name, old_val, current_val|
     if !%i[
+         discourse_newsletter_integration_provider
          discourse_newsletter_integration_mailchimp_api_key
          discourse_newsletter_integration_mailchimp_server_prefix
          discourse_newsletter_integration_mailchimp_list_id
@@ -66,6 +78,7 @@ after_initialize do
       next
     end
     next if !NewsletterIntegration.plugin_configured?
+    next if SiteSetting.discourse_newsletter_integration_provider != "mailchimp"
 
     Jobs.enqueue(Jobs::NewsletterIntegration::MailchimpWebhookSetup)
   end

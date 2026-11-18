@@ -1,6 +1,14 @@
 en:
   site_settings:
+    errors:
+      newsletter_integration_listmonk_url_invalid: "Enter an HTTP or HTTPS URL with a hostname, without credentials, a query string, or a fragment."
     discourse_newsletter_integration_enabled: "Enable the newsletter integration plugin."
+    discourse_newsletter_integration_provider: "Newsletter provider to synchronize with Discourse."
+    discourse_newsletter_integration_listmonk_url: "Base URL of your listmonk instance, e.g. `https://listmonk.example.com`."
+    discourse_newsletter_integration_listmonk_api_username: "API username for listmonk."
+    discourse_newsletter_integration_listmonk_api_token: "API token for listmonk."
+    discourse_newsletter_integration_listmonk_list_id: "Numeric ID of the listmonk list to synchronize with Discourse."
+    discourse_newsletter_integration_listmonk_preconfirm_subscriptions: "Mark subscriptions created from Discourse as confirmed in listmonk. Disable this to use listmonk double opt-in."
     discourse_newsletter_integration_mailchimp_api_key: "API key for your Mailchimp account."
     discourse_newsletter_integration_mailchimp_list_id: "The ID of your Mailchimp Audience that you want to sync with Discourse."
     discourse_newsletter_integration_mailchimp_server_prefix: "The subdomain part of the URL that you see when you log into your Mailchimp account, e.g. `us14` and `us19`."

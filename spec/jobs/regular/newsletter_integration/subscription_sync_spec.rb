@@ -58,5 +58,23 @@ describe Jobs::NewsletterIntegration::SubscriptionSync do
       )
       expect(stub).to have_been_requested
     end
+
+    context "when listmonk is configured" do
+      before { configure_listmonk_settings }
+
+      it "uses the listmonk syncer" do
+        subscription.update!(active: false)
+        stub = stub_listmonk_subscriber_lookup(subscription.user)
+
+        described_class.new.execute(
+          {
+            user_id: subscription.user.id,
+            newsletter_integration_id: subscription.newsletter_integration_id,
+          },
+        )
+
+        expect(stub).to have_been_requested
+      end
+    end
   end
 end
